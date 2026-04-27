@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기후변화 팩트체크 프로젝트 · 이해관계자 인터뷰실</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   THEME — 편집국(newsroom) × 기후자료실
+   ========================================================= */
+:root{
+  --paper: #F5F1E8;
+  --paper-dark: #E8E2D1;
+  --ink: #1A1A1A;
+  --ink-soft: #3D3D3D;
+  --ink-faded: #787060;
+  --red: #C1272D;          /* 교정부호 빨강 */
+  --red-dark: #8B1A1E;
+  --teal: #2A6E6F;         /* 기후자료실 청록 */
+  --teal-dark: #1A4647;
+  --amber: #B8860B;        /* 마킹 앰버 */
+  --paper-shadow: rgba(50, 40, 20, 0.12);
+
+  /* 페르소나 색상 (배경은 은은하게) */
+  --salote: #C85E3C;       /* 투발루 석양 */
+  --moretti: #2C5F8D;      /* 정장 블루 */
+  --sharma: #4A7C4E;       /* 사리 녹색 */
+  --han: #B8345A;          /* 미래형 핑크 */
+  --jihan: #D4A017;        /* 운동 노랑 */
+
+  --serif: 'Gowun Batang', serif;
+  --sans: 'IBM Plex Sans KR', sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  font-weight:400;
+  line-height:1.6;
+  overflow-x:hidden;
+  /* 신문 종이 질감 */
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(120, 100, 70, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(120, 100, 70, 0.03) 0%, transparent 40%),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 2px,
+      rgba(0,0,0,0.008) 2px,
+      rgba(0,0,0,0.008) 3px
+    );
+}
+
+/* =========================================================
+   HEADER — 신문 헤드
+   ========================================================= */
+.masthead{
+  border-bottom: 3px double var(--ink);
+  padding: 28px 40px 20px;
+  position: relative;
+  background: var(--paper);
+}
+.masthead-inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: auto 1fr auto;
+  gap:24px;
+  align-items:end;
+}
+.masthead-date{
+  font-family:var(--serif);
+  font-size:13px;
+  color:var(--ink-faded);
+  letter-spacing:0.5px;
+}
+.masthead-title{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing:-0.01em;
+  text-align:center;
+  line-height:1.1;
+}
+.masthead-subtitle{
+  font-family:var(--serif);
+  font-size:13px;
+  color:var(--ink-faded);
+  text-align:right;
+  letter-spacing:0.3px;
+  font-style:italic;
+}
+.masthead-tagline{
+  text-align:center;
+  margin-top:6px;
+  font-family:var(--sans);
+  font-size:12px;
+  letter-spacing:0.25em;
+  color:var(--ink-faded);
+  text-transform:uppercase;
+}
+
+/* =========================================================
+   BRIEFING — 기자 브리핑
+   ========================================================= */
+.briefing{
+  max-width:900px;
+  margin: 36px auto 20px;
+  padding: 0 40px;
+}
+.briefing-label{
+  display:inline-block;
+  background:var(--red);
+  color:var(--paper);
+  padding:4px 14px;
+  font-size:11px;
+  letter-spacing:0.25em;
+  font-weight:600;
+  text-transform:uppercase;
+  margin-bottom:16px;
+}
+.briefing-title{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height:1.3;
+  margin-bottom:14px;
+  color:var(--ink);
+}
+.briefing-body{
+  font-family:var(--serif);
+  font-size:16px;
+  line-height:1.75;
+  color:var(--ink-soft);
+}
+.briefing-body strong{
+  font-weight:700;
+  color:var(--ink);
+  background: linear-gradient(transparent 60%, rgba(184,134,11,0.25) 60%);
+  padding: 0 2px;
+}
+
+/* =========================================================
+   WORKFLOW — 취재 순서
+   ========================================================= */
+.workflow{
+  max-width:1100px;
+  margin: 30px auto;
+  padding: 0 40px;
+}
+.workflow-steps{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:10px;
+  position:relative;
+}
+.workflow-step{
+  text-align:center;
+  padding:14px 8px;
+  background: var(--paper-dark);
+  border: 1px solid var(--ink);
+  position:relative;
+}
+.workflow-step-num{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:700;
+  color:var(--red);
+}
+.workflow-step-label{
+  font-size:12px;
+  font-weight:500;
+  margin-top:4px;
+  color:var(--ink-soft);
+  letter-spacing:0.02em;
+}
+@media (max-width:720px){
+  .workflow-steps{grid-template-columns: repeat(2, 1fr);}
+}
+
+/* =========================================================
+   URL EDITOR (교사용)
+   ========================================================= */
+.url-editor{
+  max-width:1100px;
+  margin: 20px auto;
+  padding: 0 40px;
+}
+.url-editor-toggle{
+  font-family:var(--sans);
+  background:none;
+  border: 1px dashed var(--ink-faded);
+  color:var(--ink-faded);
+  padding: 6px 14px;
+  font-size: 11px;
+  cursor:pointer;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+}
+.url-editor-toggle:hover{
+  color:var(--red);
+  border-color:var(--red);
+}
+.url-editor-panel{
+  display:none;
+  background: #FFFDF5;
+  border: 1px solid var(--ink-faded);
+  padding: 20px;
+  margin-top: 12px;
+}
+.url-editor-panel.open{display:block}
+.url-editor-title{
+  font-weight:600;
+  font-size:13px;
+  margin-bottom:8px;
+}
+.url-editor-help{
+  font-size:12px;
+  color:var(--ink-faded);
+  margin-bottom:16px;
+  line-height:1.6;
+}
+.url-input-row{
+  display:grid;
+  grid-template-columns: 130px 1fr;
+  gap:10px;
+  margin-bottom:8px;
+  align-items:center;
+}
+.url-input-row label{
+  font-size:12px;
+  font-weight:500;
+}
+.url-input-row input{
+  font-family:monospace;
+  font-size:12px;
+  padding: 6px 10px;
+  border: 1px solid var(--ink-faded);
+  background: var(--paper);
+}
+
+/* =========================================================
+   PERSONA GRID — 5인의 증언자
+   ========================================================= */
+.personas{
+  max-width:1200px;
+  margin: 40px auto;
+  padding: 0 40px;
+}
+.personas-heading{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:24px;
+  margin-bottom:4px;
+  padding-bottom:8px;
+  border-bottom: 1px solid var(--ink);
+}
+.personas-heading::before{
+  content: "§ 1. ";
+  color: var(--red);
+}
+.personas-sub{
+  font-size:13px;
+  color:var(--ink-faded);
+  margin-bottom:24px;
+  letter-spacing:0.02em;
+}
+
+.persona-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.persona-card{
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 0;
+  display:flex;
+  flex-direction:column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor:default;
+  position:relative;
+  overflow:hidden;
+}
+.persona-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 4px 6px 0 var(--ink);
+}
+.persona-card-banner{
+  padding: 14px 18px 10px;
+  color: var(--paper);
+  position:relative;
+}
+.persona-card-banner::after{
+  content:"";
+  position:absolute;
+  bottom:0;left:0;right:0;height:1px;
+  background: rgba(255,255,255,0.2);
+}
+.persona-tag{
+  font-size:10px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  opacity:0.85;
+  margin-bottom: 4px;
+}
+.persona-name{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:700;
+  line-height:1.2;
+  margin-bottom:4px;
+}
+.persona-title{
+  font-size:13px;
+  opacity:0.9;
+  font-weight:300;
+}
+.persona-card-body{
+  padding: 14px 18px 18px;
+  flex-grow:1;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.persona-quote{
+  font-family:var(--serif);
+  font-size:13px;
+  font-style:italic;
+  color:var(--ink-soft);
+  line-height:1.55;
+  border-left: 2px solid currentColor;
+  padding-left:10px;
+  margin-bottom:4px;
+}
+.persona-actions{
+  margin-top:auto;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.persona-btn{
+  font-family:var(--sans);
+  font-size:12px;
+  padding: 9px 12px;
+  border:none;
+  cursor:pointer;
+  font-weight:500;
+  letter-spacing:0.03em;
+  transition: all 0.15s ease;
+  text-align:left;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.persona-btn-gem{
+  background: var(--ink);
+  color: var(--paper);
+}
+.persona-btn-gem:hover{
+  background: var(--red);
+}
+.persona-btn-cards{
+  background: var(--paper-dark);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+.persona-btn-cards:hover{
+  background: var(--ink);
+  color: var(--paper);
+}
+.persona-btn .arrow{font-size:16px;line-height:1}
+
+/* 페르소나별 배너 배경 */
+.banner-salote{background:var(--salote)}
+.banner-moretti{background:var(--moretti)}
+.banner-sharma{background:var(--sharma)}
+.banner-han{background:var(--han)}
+.banner-jihan{background:var(--jihan)}
+
+/* 인용 border 색상 */
+.persona-card[data-persona="salote"] .persona-quote{color:var(--salote)}
+.persona-card[data-persona="moretti"] .persona-quote{color:var(--moretti)}
+.persona-card[data-persona="sharma"] .persona-quote{color:var(--sharma)}
+.persona-card[data-persona="han"] .persona-quote{color:var(--han)}
+.persona-card[data-persona="jihan"] .persona-quote{color:var(--jihan)}
+
+/* =========================================================
+   COMMON CARDS SECTION
+   ========================================================= */
+.common{
+  max-width:1100px;
+  margin: 60px auto 40px;
+  padding: 0 40px;
+}
+.common-heading{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:24px;
+  margin-bottom:4px;
+  padding-bottom:8px;
+  border-bottom: 1px solid var(--ink);
+}
+.common-heading::before{
+  content: "§ 2. ";
+  color: var(--red);
+}
+.common-sub{
+  font-size:13px;
+  color:var(--ink-faded);
+  margin-bottom:24px;
+}
+.common-cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:14px;
+}
+.common-card{
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 16px 18px;
+  position:relative;
+}
+.common-card::before{
+  content: "";
+  position:absolute;
+  top:0;left:0;
+  width:32px;height:32px;
+  background: var(--red);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+.common-card-num{
+  position:absolute;
+  top:3px;left:4px;
+  font-size:10px;
+  font-weight:700;
+  color:var(--paper);
+  z-index:1;
+}
+.common-card-label{
+  font-size:10px;
+  letter-spacing:0.2em;
+  color: var(--red);
+  font-weight:600;
+  margin-bottom:8px;
+  margin-left:22px;
+}
+.common-card-question{
+  font-family:var(--serif);
+  font-size:15px;
+  font-weight:700;
+  line-height:1.5;
+  margin-bottom:8px;
+  color:var(--ink);
+}
+.common-card-reason{
+  font-size:12px;
+  color:var(--ink-faded);
+  line-height:1.6;
+  padding-top:8px;
+  border-top: 1px dashed var(--ink-faded);
+}
+
+/* =========================================================
+   MODAL — 질문 카드 오픈
+   ========================================================= */
+.modal-backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(20,15,5,0.65);
+  backdrop-filter: blur(3px);
+  display:none;
+  z-index:100;
+  opacity:0;
+  transition:opacity 0.25s ease;
+}
+.modal-backdrop.open{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  opacity:1;
+  padding: 40px 20px;
+  overflow-y:auto;
+}
+.modal{
+  background: var(--paper);
+  max-width: 760px;
+  width:100%;
+  padding: 32px;
+  position:relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  border: 1px solid var(--ink);
+}
+.modal-backdrop.open .modal{transform:translateY(0)}
+.modal-close{
+  position:absolute;
+  top:14px;right:14px;
+  background:none;
+  border:none;
+  font-size:28px;
+  cursor:pointer;
+  color:var(--ink-faded);
+  line-height:1;
+  transition: color 0.15s;
+}
+.modal-close:hover{color:var(--red)}
+
+.modal-header{
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+.modal-tag{
+  font-size:10px;
+  letter-spacing:0.25em;
+  font-weight:600;
+  text-transform:uppercase;
+  margin-bottom:6px;
+}
+.modal-persona-name{
+  font-family:var(--serif);
+  font-size:26px;
+  font-weight:700;
+}
+.modal-persona-role{
+  font-size:13px;
+  color:var(--ink-faded);
+  margin-top:2px;
+}
+.modal-progress{
+  font-size:11px;
+  color:var(--ink-faded);
+  margin-top:8px;
+}
+.modal-progress-dots{
+  display:inline-flex;
+  gap:5px;
+  margin-left:10px;
+  vertical-align:middle;
+}
+.modal-progress-dot{
+  width:8px;height:8px;
+  border-radius:50%;
+  border: 1.5px solid var(--ink);
+}
+.modal-progress-dot.done{background:var(--red);border-color:var(--red)}
+
+.modal-cards{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.q-card{
+  border: 1px solid var(--ink);
+  padding: 0;
+  background: #FFFDF5;
+  overflow:hidden;
+  transition: all 0.25s ease;
+}
+.q-card.hidden-stage{
+  opacity: 0.6;
+}
+.q-card.locked{
+  opacity: 0.35;
+  pointer-events:none;
+}
+
+.q-card-head{
+  padding: 10px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background: var(--paper-dark);
+  border-bottom: 1px solid var(--ink);
+}
+.q-card-num{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:14px;
+}
+.q-card-open-btn{
+  font-family:var(--sans);
+  font-size:11px;
+  padding: 5px 12px;
+  background: var(--ink);
+  color: var(--paper);
+  border:none;
+  cursor:pointer;
+  font-weight:500;
+  letter-spacing:0.05em;
+}
+.q-card-open-btn:hover{background:var(--red)}
+.q-card-open-btn.revealed{
+  background: transparent;
+  color: var(--ink-faded);
+  font-style:italic;
+  cursor:default;
+}
+.q-card-open-btn.revealed:hover{background:transparent}
+
+.q-card-body{
+  max-height:0;
+  overflow:hidden;
+  transition: max-height 0.4s ease;
+}
+.q-card-body.open{
+  max-height:600px;
+}
+.q-card-body-inner{
+  padding: 18px 20px 20px;
+}
+.q-card-question-label{
+  font-size:10px;
+  letter-spacing:0.25em;
+  color: var(--red);
+  font-weight:600;
+  margin-bottom:6px;
+}
+.q-card-question{
+  font-family:var(--serif);
+  font-size:18px;
+  font-weight:700;
+  line-height:1.5;
+  color:var(--ink);
+  margin-bottom:14px;
+}
+.q-card-reason-label{
+  font-size:10px;
+  letter-spacing:0.2em;
+  color:var(--ink-faded);
+  font-weight:600;
+  margin-bottom:4px;
+}
+.q-card-reason{
+  font-size:13px;
+  line-height:1.7;
+  color:var(--ink-soft);
+  padding: 10px 14px;
+  background: var(--paper);
+  border-left: 3px solid var(--amber);
+}
+
+.hint-notice{
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: var(--paper-dark);
+  border: 1px dashed var(--ink);
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height:1.6;
+}
+.hint-notice.available{
+  background: #FFF8E1;
+  border: 1px solid var(--amber);
+  color: var(--ink);
+}
+.hint-notice-title{
+  font-weight:700;
+  font-size:13px;
+  margin-bottom:4px;
+  color: var(--amber);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer{
+  max-width:1100px;
+  margin: 60px auto 40px;
+  padding: 24px 40px;
+  border-top: 3px double var(--ink);
+  font-size:12px;
+  color:var(--ink-faded);
+  line-height:1.7;
+  font-family:var(--serif);
+  text-align:center;
+}
+.footer-quote{
+  font-style:italic;
+  font-size:14px;
+  color:var(--ink);
+  margin-bottom:10px;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+@media (max-width:700px){
+  .masthead{padding: 20px 20px 16px}
+  .masthead-inner{grid-template-columns: 1fr; text-align:center}
+  .masthead-subtitle{text-align:center}
+  .briefing, .workflow, .url-editor, .personas, .common, .footer{padding: 0 20px}
+  .modal{padding: 24px 18px}
+  .q-card-question{font-size:16px}
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+@keyframes fadeInUp{
+  from{opacity:0; transform:translateY(15px)}
+  to{opacity:1; transform:translateY(0)}
+}
+.persona-card{
+  animation: fadeInUp 0.5s ease backwards;
+}
+.persona-card:nth-child(1){animation-delay:0.05s}
+.persona-card:nth-child(2){animation-delay:0.15s}
+.persona-card:nth-child(3){animation-delay:0.25s}
+.persona-card:nth-child(4){animation-delay:0.35s}
+.persona-card:nth-child(5){animation-delay:0.45s}
+
+</style>
+</head>
+<body>
+
+<!-- ============== HEADER ============== -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-date">2026 · 통합사회1 · 3.자연환경과 인간</div>
+    <div>
+      <div class="masthead-title">기후 팩트체크 프로젝트</div>
+    </div>
+    <div class="masthead-subtitle">이해관계자 인터뷰</div>
+  </div>
+</header>
+
+<!-- ============== BRIEFING ============== -->
+<section class="briefing">
+  <div class="briefing-label">오늘의 미션</div>
+  <h2 class="briefing-title">이해관계자 5인의 목소리를 듣되, 한 명의 말도 그대로 믿지 마십시오.</h2>
+  <p class="briefing-body">
+    여러분은 오늘 <strong>김해율하고 기후 팩트체크 팀</strong>의 기자입니다. 해수면 상승, 에너지 전환, 세대 정의 등 서로 부딪히는 이해관계 속에서 다섯 명의 이야기를 듣게 됩니다. 이들의 말은 진심이지만 <strong>불완전</strong>합니다. 여러분의 할 일은 공감만하는 것이 아니라, <strong>공감하면서도 의심하는 법</strong>을 배우는 것입니다.
+  </p>
+</section>
+
+<!-- ============== WORKFLOW ============== -->
+<section class="workflow">
+  <div class="workflow-steps">
+    <div class="workflow-step">
+      <div class="workflow-step-num">01</div>
+      <div class="workflow-step-label">역할 분담</div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-step-num">02</div>
+      <div class="workflow-step-label">이해관계자 인터뷰 (Gem 대화)</div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-step-num">03</div>
+      <div class="workflow-step-label">팩트체크 활동지 작성</div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-step-num">04</div>
+      <div class="workflow-step-label">모둠 공유</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PERSONA GRID ============== -->
+<section class="personas">
+  <h3 class="personas-heading">5인의 증언자</h3>
+  <p class="personas-sub">각 이름을 클릭해 Gem 인터뷰실로 입장하세요. 우측 '질문 카드' 버튼은 비판적 질문을 단계적으로 엽니다.</p>
+  <div class="persona-grid" id="personaGrid">
+    <!-- 카드는 JS로 렌더 -->
+  </div>
+</section>
+
+<!-- ============== COMMON CARDS ============== -->
+<section class="common">
+  <h3 class="common-heading">모든 인터뷰에 쓸 수 있는 공통 질문</h3>
+  <p class="common-sub">5인 누구와 대화하든 사용 가능한 4장의 만능 카드입니다.</p>
+  <div class="common-cards" id="commonCards">
+    <!-- JS로 렌더 -->
+  </div>
+</section>
+
+<!-- ============== MODAL ============== -->
+<div class="modal-backdrop" id="modalBackdrop" onclick="closeModalIfBackdrop(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-header">
+      <div class="modal-tag" id="modalTag">질문 카드</div>
+      <div class="modal-persona-name" id="modalName"></div>
+      <div class="modal-persona-role" id="modalRole"></div>
+      <div class="modal-progress">
+        <span id="modalProgressText">질문 0 / 3 오픈</span>
+        <span class="modal-progress-dots" id="modalDots"></span>
+      </div>
+    </div>
+    <div class="modal-cards" id="modalCards"></div>
+    <div class="hint-notice" id="hintNotice">
+      <div class="hint-notice-title">💡 질문 카드</div>
+      <span id="hintNoticeText">기본 질문 카드 3장을 모두 열고 나면 '공통 질문 카드'를 활용해 보세요.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============== FOOTER ============== -->
+<footer class="footer">
+  <div class="footer-quote">"환경 문제를 푸는 법이 아니라, 환경 문제를 대하는 법을 배우는 시간."</div>
+  <div>通합사회 1차시 · 비판적 정보 판별 수업 · 2022 개정교육과정</div>
+</footer>
+
+<script>
+/* ==========================================================
+   PERSONA DATA
+   — 배포 전 각 persona의 gemUrl을 실제 URL로 교체하세요.
+   ========================================================== */
+const PERSONA_DATA = {
+  salote: {
+    tag: "이해관계자 ①",
+    name: "살로테 타비타",
+    role: "투발루 기후난민 활동가",
+    quote: "우리는 0.003% 배출 국가입니다. 그런데 국토를 잃는 것은 우리입니다.",
+    banner: "banner-salote",
+    gemUrl: "https://gemini.google.com/gem/1WwhpwepzEgMtPFYSmtu8EoH1U8MHMF_A?usp=sharing",
+    cards: [
+      {
+        num: "기본 #1",
+        question: "현재 전 세계에서 탄소를 가장 많이 배출하는 국가는 어디인가요? 그 나라도 책임이 있지 않나요?",
+        reason: "살로테는 '선진국의 역사적 책임'을 강조합니다. 그런데 현재 배출 1위는 중국, 3위는 인도입니다. 현재 배출 책임은 어떻게 분배되어야 할까요?"
+      },
+      {
+        num: "기본 #2",
+        question: "투발루 정부는 이 문제를 해결하기 위해 스스로 어떤 노력을 하고 있나요?",
+        reason: "피해자의 호소가 강력할수록 '자기 책임'에 대한 질문은 잊히기 쉽습니다. 투발루 정부의 적응 정책, 주민 이주 협약 등을 물어 입체적으로 파악하세요."
+      },
+      {
+        num: "기본 #3",
+        question: "선진국 안에도 가난한 사람들이 많은데, 그들에게도 같은 책임을 지우는 것은 정당한가요?",
+        reason: "'선진국 vs 개도국' 프레임은 국가 내부의 불평등을 가립니다. 미국·유럽의 저소득층도 1인당 배출이 많다고 똑같이 책임을 져야 할까요?"
+      }
+    ]
+  },
+  moretti: {
+    tag: "이해관계자 ②",
+    name: "제임스 모레티",
+    role: "Arcadia Energy CEO",
+    quote: "우리는 2050 넷제로를 약속했습니다. 전환의 리더는 바로 우리입니다.",
+    banner: "banner-moretti",
+    gemUrl: "https://gemini.google.com/gem/1Oj4owm3GDJCuONjPRwJ8QrpiYbxqxmgy?usp=sharing",
+    cards: [
+      {
+        num: "기본 #1",
+        question: "재생에너지 투자 100억 달러 외에, 같은 기간 석유·가스 개발 투자는 얼마인가요?",
+        reason: "'우리는 재생에 투자한다'는 주장은 전체 투자 비율을 밝혀야 의미가 있습니다. 재생 투자액만 강조하고 석유·가스 투자를 숨기는 것은 전형적인 그린워싱 기법입니다."
+      },
+      {
+        num: "기본 #2",
+        question: "지금까지 실제로 포집한 탄소는 얼마이고, 2030년 목표 5,000만 톤의 근거는 무엇인가요?",
+        reason: "'목표'는 말이고 '실적'은 증거입니다. CCS는 현재 전 세계 배출량의 0.1% 미만만 포집합니다. 기업의 미래 공약은 실적으로 검증되어야 합니다."
+      },
+      {
+        num: "기본 #3",
+        question: "'개도국 에너지 빈곤' 때문에 화석연료가 필요하다고 하셨는데, 회사의 신규 유전은 실제로 어디에 있나요?",
+        reason: "'개도국을 위해'라는 수사 뒤에 실제로는 북해, 미국 셰일 등 선진국 개발이 다수인 경우가 많습니다. 수사와 실제의 간극을 확인하세요."
+      }
+    ]
+  },
+  sharma: {
+    tag: "이해관계자 ③",
+    name: "프리야 샤르마",
+    role: "인도 에너지부 장관",
+    quote: "선진국은 200년 탄소부채가 있습니다. 책임은 형평에 맞게 분배되어야 합니다.",
+    banner: "banner-sharma",
+    gemUrl: "https://gemini.google.com/gem/1E87yQ61d-EC4g23C9mpMh9jPcF_VTd_Y?usp=sharing",
+    cards: [
+      {
+        num: "기본 #1",
+        question: "인도는 현재 세계 3위 배출국입니다. 현재 배출량에 대한 책임은 어떻게 생각하시나요?",
+        reason: "샤르마는 '누적 배출(역사적 책임)'을 강조하나, 현재 배출 증가분에 대한 책임은 회피합니다. 현재도 '선진국 탓'만 할 수 있는지 물어보세요."
+      },
+      {
+        num: "기본 #2",
+        question: "인도 국내에서 대기오염으로 매년 몇 명이 사망하나요? 석탄 화력의 국내 피해는 어떻게 보시나요?",
+        reason: "인도 국내 대기오염 사망자는 연 167만 명(Lancet 2021)입니다. 기후정의를 국제 문제로만 다루면 자국민 피해는 가려집니다."
+      },
+      {
+        num: "기본 #3",
+        question: "인도 안에서도 상위 10%가 하위 50%의 7배를 소비합니다. '인도 평균' 수치는 이 격차를 가리지 않나요?",
+        reason: "국가 평균 통계는 국내 불평등을 감춥니다. 인도 부유층의 배출량은 선진국 중산층과 비슷합니다. 'N국 평균'이라는 단위 자체를 의심해 보세요."
+      }
+    ]
+  },
+  han: {
+    tag: "이해관계자 ④",
+    name: "한소영",
+    role: "CarbonLoop CEO · 기후테크 창업자",
+    quote: "기후 위기의 해답은 기술 혁신입니다. DAC가 게임체인저입니다.",
+    banner: "banner-han",
+    gemUrl: "https://gemini.google.com/gem/1wAps-KaAzt0JevCk9t8tCok_FFV_90Gs?usp=sharing",
+    cards: [
+      {
+        num: "기본 #1",
+        question: "현재 전 세계 DAC 설비가 포집하는 양은 연 1만 톤입니다. 2040년 10억 톤은 10만 배 성장인데, 어떻게 가능한가요?",
+        reason: "기술 낙관론의 전형적 함정입니다. '태양광도 그랬다'는 비교가 정말 타당한지, 물리적·경제적 제약은 무엇인지 구체적으로 따져봐야 합니다."
+      },
+      {
+        num: "기본 #2",
+        question: "DAC 운영에 필요한 막대한 전력은 어디서 오나요? 탄소 잡느라 탄소를 더 쓰는 건 아닌가요?",
+        reason: "DAC는 대량의 에너지를 쓰는 기술입니다. 재생에너지 인프라가 없으면 화석연료로 DAC를 돌리는 모순이 생깁니다. 기술만으로 풀리지 않는 문제입니다."
+      },
+      {
+        num: "기본 #3",
+        question: "기술로 해결된다면, 우리는 지금처럼 소비를 계속해도 되나요? 생활양식 변화는 필요 없나요?",
+        reason: "'기술이 해결한다'는 말은 개인과 사회가 변할 필요 없다는 메시지를 숨깁니다. 수요 측 변화(덜 쓰기, 덜 이동하기)는 기술만큼 중요한가요?"
+      }
+    ]
+  },
+  jihan: {
+    tag: "이해관계자 ⑤",
+    name: "지한",
+    role: "FFF Korea · 17세 청소년 활동가",
+    quote: "어른들은 2050년 얘기만 해요. 그때 전 42살이에요.",
+    banner: "banner-jihan",
+    gemUrl: "https://gemini.google.com/gem/1a8ZAMENpfEtDf_7jUJpRwTP9cVxxGI1K?usp=sharing",
+    cards: [
+      {
+        num: "기본 #1",
+        question: "'시스템 변화가 필요하다'고 하셨는데, 구체적으로 어떤 법, 어떤 재정 정책이 바뀌어야 하나요?",
+        reason: "'시스템 변화'는 멋진 말이지만 애매합니다. 구체적 정책을 물으면 피상적 이해가 드러날 수 있습니다. 청소년 활동가도 비판적으로 평가해야 합니다."
+      },
+      {
+        num: "기본 #2",
+        question: "활동가로서 본인의 일상 실천은 어떠세요? 비행기, 육류 소비, 패스트패션은요?",
+        reason: "'개인보다 시스템'을 강조하는 논리는 본인의 개인 실천을 면제하는 근거로 쓰이기 쉽습니다. 주장과 삶의 일치도 평가 대상입니다."
+      },
+      {
+        num: "기본 #3",
+        question: "'청소년이 나선다'고 하셨는데, 주변 친구들은 기후 문제에 얼마나 관심이 있나요?",
+        reason: "'세대'라는 말은 세대 내부의 다양성을 지웁니다. 기후 운동을 주도하는 청소년은 소수이고, 대다수는 무관심합니다. '우리 세대'라는 표현을 의심해 보세요."
+      }
+    ]
+  }
+};
+
+const COMMON_CARDS = [
+  {
+    num: "공통 #1",
+    question: "그 주장의 근거는 무엇인가요?",
+    reason: "말만 그럴듯한 주장과 근거 있는 주장을 구분하기 위한 첫 번째 질문입니다. 수치, 사례, 연구 결과 등 구체적인 증거를 요구해 보세요."
+  },
+  {
+    num: "공통 #2",
+    question: "이 주장으로 누가 이득을 보나요?",
+    reason: "모든 주장에는 그 주장을 통해 이익을 얻는 사람이 있습니다. 화자의 이해관계를 파악하면 주장의 진짜 의도가 보입니다."
+  },
+  {
+    num: "공통 #3",
+    question: "이 주장에서 빠진 관점은 무엇인가요?",
+    reason: "모든 입장은 자신에게 유리한 정보만 고릅니다. 빠진 관점·보이지 않는 피해자·불편한 사실을 찾아내는 것이 비판적 사고의 핵심입니다."
+  },
+  {
+    num: "공통 #4",
+    question: "같은 사실을 다르게 해석할 수는 없나요?",
+    reason: "같은 수치, 같은 사건도 누가 해석하느냐에 따라 다르게 읽힙니다. '그 해석이 유일한가?'를 물어 프레이밍의 힘을 의심해 보세요."
+  }
+];
+
+/* ==========================================================
+   STATE
+   — 카드 오픈 상태는 메모리에만 저장 (새로고침 시 초기화).
+   ========================================================== */
+const state = {
+  currentPersona: null,
+  revealedCards: {
+    salote: [],
+    moretti: [],
+    sharma: [],
+    han: [],
+    jihan: []
+  }
+};
+
+/* ==========================================================
+   RENDER
+   ========================================================== */
+function renderPersonas(){
+  const grid = document.getElementById('personaGrid');
+  grid.innerHTML = Object.entries(PERSONA_DATA).map(([key, p]) => `
+    <article class="persona-card" data-persona="${key}">
+      <div class="persona-card-banner ${p.banner}">
+        <div class="persona-tag">${p.tag}</div>
+        <div class="persona-name">${p.name}</div>
+        <div class="persona-title">${p.role}</div>
+      </div>
+      <div class="persona-card-body">
+        <div class="persona-quote">"${p.quote}"</div>
+        <div class="persona-actions">
+          <a class="persona-btn persona-btn-gem" href="${p.gemUrl}" target="_blank" rel="noopener">
+            <span>🎙 인터뷰실 입장</span><span class="arrow">→</span>
+          </a>
+          <button class="persona-btn persona-btn-cards" onclick="openModal('${key}')">
+            <span>🗂 질문 카드 열기</span><span class="arrow">⤴</span>
+          </button>
+        </div>
+      </div>
+    </article>
+  `).join('');
+}
+
+function renderCommon(){
+  const el = document.getElementById('commonCards');
+  el.innerHTML = COMMON_CARDS.map((c, i) => `
+    <div class="common-card">
+      <span class="common-card-num">${i+1}</span>
+      <div class="common-card-label">${c.num}</div>
+      <div class="common-card-question">${c.question}</div>
+      <div class="common-card-reason">${c.reason}</div>
+    </div>
+  `).join('');
+}
+
+/* ==========================================================
+   MODAL
+   ========================================================== */
+function openModal(personaKey){
+  state.currentPersona = personaKey;
+  const persona = PERSONA_DATA[personaKey];
+  document.getElementById('modalTag').textContent = persona.tag;
+  document.getElementById('modalName').textContent = persona.name;
+  document.getElementById('modalRole').textContent = persona.role;
+  renderModalCards();
+  document.getElementById('modalBackdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(){
+  document.getElementById('modalBackdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModalIfBackdrop(e){
+  if(e.target.id === 'modalBackdrop') closeModal();
+}
+
+function renderModalCards(){
+  const p = state.currentPersona;
+  const persona = PERSONA_DATA[p];
+  const revealed = state.revealedCards[p];
+  const container = document.getElementById('modalCards');
+
+  container.innerHTML = persona.cards.map((card, idx) => {
+    const isRevealed = revealed.includes(idx);
+    return `
+      <div class="q-card ${isRevealed ? '' : 'hidden-stage'}" data-idx="${idx}">
+        <div class="q-card-head">
+          <div class="q-card-num">${card.num}</div>
+          <button class="q-card-open-btn ${isRevealed ? 'revealed' : ''}"
+            ${isRevealed ? 'disabled' : `onclick="revealCard(${idx})"`}>
+            ${isRevealed ? '✓ 열림' : '열기 ▸'}
+          </button>
+        </div>
+        <div class="q-card-body ${isRevealed ? 'open' : ''}">
+          <div class="q-card-body-inner">
+            <div class="q-card-question-label">💬 질문</div>
+            <div class="q-card-question">${card.question}</div>
+            <div class="q-card-reason-label">🔍 이 질문이 중요한 이유</div>
+            <div class="q-card-reason">${card.reason}</div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // progress
+  document.getElementById('modalProgressText').textContent =
+    `질문 ${revealed.length} / ${persona.cards.length} 오픈`;
+  document.getElementById('modalDots').innerHTML =
+    persona.cards.map((_,i) =>
+      `<span class="modal-progress-dot ${revealed.includes(i) ? 'done' : ''}"></span>`
+    ).join('');
+
+  // hint notice
+  const hint = document.getElementById('hintNotice');
+  const hintText = document.getElementById('hintNoticeText');
+  if(revealed.length === persona.cards.length){
+    hint.classList.add('available');
+    hintText.innerHTML = `
+      <strong>기본 카드 3장</strong>을 모두 사용했습니다. 이제 <strong>공통 질문 카드</strong>를 사용해보세요.
+    `;
+  } else {
+}
+
+function revealCard(idx){
+  const p = state.currentPersona;
+  if(!state.revealedCards[p].includes(idx)){
+    state.revealedCards[p].push(idx);
+  }
+  renderModalCards();
+}
+
+/* ==========================================================
+   URL EDITOR (교사용)
+   ========================================================== */
+function toggleUrlEditor(){
+  document.getElementById('urlEditor').classList.toggle('open');
+}
+
+function updateUrl(key, url){
+  if(url && url.trim().length > 0){
+    PERSONA_DATA[key].gemUrl = url.trim();
+    renderPersonas(); // 카드 재렌더로 링크 갱신
+  }
+}
+
+/* ==========================================================
+   KEYBOARD
+   ========================================================== */
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape') closeModal();
+});
+
+/* ==========================================================
+   INIT
+   ========================================================== */
+renderPersonas();
+renderCommon();
+</script>
+
+</body>
+</html>
